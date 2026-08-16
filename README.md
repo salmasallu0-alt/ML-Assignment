@@ -62,7 +62,7 @@ The models were trained on a scaled version of the dataset, and their performanc
 *Based on the metrics, the **[Your Chosen Model, e.g., Logistic Regression or Random Forest]** appears to be the overall winner for this dataset. It achieved the highest/most balanced scores across crucial metrics like Accuracy, AUC, and F1 Score, suggesting robust and reliable predictions.*
 
 ## 5. Live Streamlit App Link
-[Your Streamlit App Link Here - e.g., `https://your-username.streamlit.app/`]
+https://ml-assignment-haqsur7c76nbcr3a3fjgmy.streamlit.app
 
 **Features Implemented:**
 -   **Dataset Upload Option (CSV):** Allows users to upload their own test data for real-time prediction and evaluation.
