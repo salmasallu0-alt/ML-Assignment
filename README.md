@@ -20,7 +20,7 @@ This project aims to develop and compare multiple machine learning classificatio
 **Minimum Instance Size:** 500 (This dataset has 569 instances).
 
 ## 3. GitHub Repository Link
-[Your GitHub Repository Link Here]
+https://github.com/salmasallu0-alt/ML-Assignment.git
 
 ## 4. Models Used and Comparison
 Six classification models were implemented and evaluated on the dataset:
