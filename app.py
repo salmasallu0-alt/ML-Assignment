@@ -55,23 +55,18 @@ def evaluate_model(model, X_test_scaled, y_test):
 st.title("🔬 Breast Cancer Prediction App")
 st.write("This application predicts breast cancer based on various features using different machine learning models.")
 
-st.sidebar.header("Upload Test Data")
-uploaded_file = st.sidebar.file_uploader("Upload your test data CSV (e.g., test_data.csv)", type=["csv"])
+# Load test data from GitHub repository
+from pathlib import Path
 
-# Load test data or use a dummy if not uploaded
-if uploaded_file is not None:
-    test_df = pd.read_csv(uploaded_file)
-    st.sidebar.success("Test data uploaded successfully!")
+BASE_DIR = Path(__file__).resolve().parent
+test_data_path = BASE_DIR / "test_data.csv"
+
+if test_data_path.exists():
+    test_df = pd.read_csv(test_data_path)
+    st.sidebar.success("Test data loaded from GitHub repository!")
 else:
-    st.sidebar.info("Please upload `test_data.csv` for evaluation. Using a dummy dataset for demonstration.")
-    # Create a dummy test_data.csv for initial load demonstration
-    # In a real scenario, you'd load a pre-defined test_data.csv
-    test_data_path = 'test_data.csv'
-    if os.path.exists(test_data_path):
-        test_df = pd.read_csv(test_data_path)
-    else:
-        st.error("Error: 'test_data.csv' not found. Please run the cell to create it, or upload your own.")
-        st.stop()
+    st.sidebar.error("test_data.csv was not found in the GitHub repository.")
+    st.stop()
 
 # Ensure 'diagnosis' column exists in test_df and separate X_test, y_test
 if 'diagnosis' not in test_df.columns:
